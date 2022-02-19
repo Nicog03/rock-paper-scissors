@@ -2,7 +2,6 @@ let computerPlay;
 
 function computerPlayRandomizer() {
     let randomNum = Math.floor((Math.random() * 3) + 1);
-    console.log(randomNum);
     if (randomNum == 1) {
         return computerPlay = 'rock';
     } else if (randomNum == 2) {
@@ -18,30 +17,60 @@ function gameRound() {
             if (computerPlay == 'rock') {
                 console.log("It's a tie!");
             } else if (computerPlay == 'paper') {
-                console.log("You lost! Paper wraps rocks :(")
+                console.log("You lost! Paper wraps rocks :(");
+                computerScore++; 
             } else if (computerPlay == 'scissors') {
                 console.log("You won! Rock breaks scissors!");
+                userScore++;
             }
             break;
         
         case "paper":
             if (computerPlay == 'rock') {
-                console.log("You won! Paper wraps rock!")
+                console.log("You won! Paper wraps rock!");
+                userScore++;
             } else if (computerPlay == 'paper') {
                 console.log("It's a tie!")
             } else if (computerPlay == 'scissors') {
-                console.log("You lost! scissors cut paper :(")
+                console.log("You lost! scissors cut paper :(");
+                computerScore++;
             }
             break;
         
         case "scissors":
             if (computerPlay == 'rock') {
                 console.log("You lost! Rock breaks scissors :(")
+                computerScore++;
             } else if (computerPlay == 'paper') {
                 console.log("You won! scissors cut paper")
+                userScore++;
             } else if (computerPlay == 'scissors') {
                 console.log("It's a tie!")
             }
             break;
     }
 }
+
+let userPlay
+let userScore = 0;
+let computerScore = 0;
+let answer
+
+do { 
+    console.clear()
+    
+    console.log(`Your score is: ${userScore}`);
+    console.log(`The computer score is: ${computerScore}`);
+    
+    userPlay = prompt('Rock, paper or scissors? ').toLowerCase();
+    computerPlayRandomizer();
+    gameRound();
+    
+    
+    answer = prompt('ready for another round? ').toLowerCase();
+    if (answer == 'y') {   
+        console.log('Ok lets keep going!')
+    } else {
+        console.log('ok! see you next time!');
+    }
+} while (answer == 'y')
