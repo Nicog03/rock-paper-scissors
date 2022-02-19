@@ -1,4 +1,3 @@
-let gameResult;
 let computerPlay;
 
 function computerPlayRandomizer() {
@@ -46,13 +45,3 @@ function gameRound() {
             break;
     }
 }
-
-let userPlay = prompt('Make your play: ').toLowerCase();
-computerPlayRandomizer();
-
-console.log(userPlay);
-console.log(computerPlay);
-
-gameRound();
-
-console.log(gameResult);
