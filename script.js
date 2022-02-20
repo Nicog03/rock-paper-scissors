@@ -59,12 +59,19 @@ let answer
 do { 
     console.clear()
     
+    console.log('----------------------');
     console.log(`Your score is: ${userScore}`);
     console.log(`The computer score is: ${computerScore}`);
-    
+    console.log('----------------------');
+
     userPlay = prompt('Rock, paper or scissors? ').toLowerCase();
     computerPlayRandomizer();
+    console.log(`The computer played [${computerPlay}]`);
+    console.log(`Your played [${userPlay}]`);
+    console.log('----------------------');
+
     gameRound();
+    
     if (computerScore == 3) {
         console.log('You lost the game! The computer scored 3 points :(')
     } else if (userScore == 3) {
