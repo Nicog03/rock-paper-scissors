@@ -65,8 +65,11 @@ do {
     userPlay = prompt('Rock, paper or scissors? ').toLowerCase();
     computerPlayRandomizer();
     gameRound();
-    
-    
+    if (computerScore == 3) {
+        console.log('You lost the game! The computer scored 3 points :(')
+    } else if (userScore == 3) {
+        console.log('You won the game! You scored 3 points :D');
+    }
     answer = prompt('ready for another round? ').toLowerCase();
     if (answer == 'y') {   
         console.log('Ok lets keep going!')
