@@ -55,31 +55,41 @@ let userPlay
 let userScore = 0;
 let computerScore = 0;
 let answer
+let endMatch = false;
 
 do { 
-    console.clear()
-    
-    console.log('----------------------');
-    console.log(`Your score is: ${userScore}`);
-    console.log(`The computer score is: ${computerScore}`);
-    console.log('----------------------');
+    userScore = 0;
+    computerScore = 0;
+    endMatch = false;
 
-    userPlay = prompt('Rock, paper or scissors? ').toLowerCase();
-    computerPlayRandomizer();
-    console.log(`The computer played [${computerPlay}]`);
-    console.log(`Your played [${userPlay}]`);
-    console.log('----------------------');
+    while (endMatch == false) {
+        console.clear();
+        console.log('----------------------');
+        console.log(`Your score is: ${userScore}`);
+        console.log(`The computer score is: ${computerScore}`);
+        console.log('----------------------');
 
-    gameRound();
+        userPlay = prompt('Rock, paper or scissors? ').toLowerCase();
+        computerPlayRandomizer();
+        console.log(`The computer played [${computerPlay}]`);
+        console.log(`Your played [${userPlay}]`);
+        console.log('----------------------');
+
+        gameRound();
     
-    if (computerScore == 3) {
-        console.log('You lost the game! The computer scored 3 points :(')
-    } else if (userScore == 3) {
+        if (computerScore == 3) {
+        console.log('You lost the game! The computer scored 3 points :(');
+        endMatch = true;
+        } else if (userScore == 3) {
         console.log('You won the game! You scored 3 points :D');
+        endMatch = true;
+        }
+        prompt('Press [enter] to start another round').toLowerCase();
     }
-    answer = prompt('Press [enter] to start another round').toLowerCase();
-    if (answer == '') {   
+    
+    answer = prompt('Do you want to start another match? (y/n)').toLowerCase();
+    if (answer == 'y') {   
     } else {
         console.log('Ok! see you next time!');
     }
-} while (answer == '')
+} while (answer == 'y')
