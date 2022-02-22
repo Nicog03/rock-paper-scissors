@@ -77,7 +77,7 @@ do {
     } else if (userScore == 3) {
         console.log('You won the game! You scored 3 points :D');
     }
-    answer = prompt('Press [enter] to start another match').toLowerCase();
+    answer = prompt('Press [enter] to start another round').toLowerCase();
     if (answer == '') {   
     } else {
         console.log('Ok! see you next time!');
