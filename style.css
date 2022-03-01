@@ -11,6 +11,26 @@ body {
   justify-content: center;
 }
 
+.player {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-tag {
+  align-self: flex-start;
+  font-size: 20px;
+}
+
+.computer {
+  display: flex;
+  flex-direction: column;
+}
+
+.computer-tag {
+  align-self: flex-end;
+  font-size: 20px;
+}
+
 .buttons {
   display: flex;
   gap: 5rem;
