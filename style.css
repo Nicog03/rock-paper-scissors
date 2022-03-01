@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
+
+* {
+  font-family: "Shippori Antique B1", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 5rem;
+}
+
+.player-buttons,
+.computer-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.player-buttons div,
+.computer-buttons div {
+  border: black solid 3px;
+  padding: 5px;
+  box-shadow: black 3px 3px;
+}
