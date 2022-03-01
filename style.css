@@ -11,6 +11,10 @@ body {
   justify-content: center;
 }
 
+/* =============================================== */
+/* ================TAGS SECTION ================== */
+/* ===============================================*/
+
 .player {
   display: flex;
   flex-direction: column;
@@ -31,6 +35,10 @@ body {
   font-size: 20px;
 }
 
+/* =============================================== */
+/* ================BUTTONS SECTION =============== */
+/* ===============================================*/
+
 .buttons {
   display: flex;
   gap: 5rem;
@@ -47,4 +55,10 @@ body {
   border: black solid 3px;
   padding: 5px;
   box-shadow: black 3px 3px;
+  transition: ease-out 0.3s;
+}
+
+.player-buttons div:hover {
+  background-color: rgb(0, 255, 157);
+  cursor: pointer;
 }
