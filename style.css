@@ -10,6 +10,7 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
+  transition: ease-out 1s;
 }
 
 /* =============================================== */
@@ -27,6 +28,7 @@ body {
   border: black solid 3px;
   padding: 3px 5px;
   box-shadow: black 3px 3px;
+  background-color: white;
 }
 
 /* =============================================== */
@@ -74,16 +76,17 @@ body {
   padding: 5px;
   box-shadow: black 3px 3px;
   transition: ease-out 0.3s;
+  background-color: white;
 }
 
 .player-buttons div:hover {
-  background-color: rgb(44, 159, 253);
+  background-color: #2c9ffd !important;
   color: black;
   cursor: pointer;
 }
 
 .selected {
-  background-color: rgb(0, 0, 0);
+  background-color: #000000 !important;
   color: white;
   box-shadow: none !important;
 }
@@ -111,4 +114,17 @@ body {
 
 .draw {
   background-color: #c2c2c2;
+}
+
+/* =============================================== */
+/* ===========WINNER   SECTION =============== */
+/* ===============================================*/
+
+.winner-style {
+  font-size: 20px;
+  background-color: #ffae00;
+  border: black solid 3px;
+  box-shadow: black 3px 3px;
+  padding: 3px;
+  transition: ease-out 0.4s;
 }

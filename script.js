@@ -90,6 +90,7 @@ function gameRound() {
     roundStatus.classList.remove('win');
     roundStatus.classList.remove('loss');
     roundStatus.classList.remove('draw');
+    
     switch (userPlay) {
         case 'rock':
             if (computerPlay == 'rock') {
@@ -147,5 +148,28 @@ function gameRound() {
                 roundStatus.classList.add('draw');
             }
             break;
-            }
+    }
+    if (userScore == 5) {
+        const winner = document.querySelector('.winner');
+        winner.classList.add('winner-style');
+        winner.textContent = 'You won the match!'
+
+        body.style.background = '#C3FFE7';
+
+        endGame();
+    } else if (computerScore == 5) {
+        const winner = document.querySelector('.winner');
+        winner.classList.add('winner-style');
+        winner.textContent = 'The computer won the match!'
+
+        body.style.background = '#FFD3D3';
+
+        endGame();
+    }
+}
+
+function endGame() {
+    userRock.removeEventListener('click', userSelectRock);
+    userPaper.removeEventListener('click', userSelectPaper);
+    userScissor.removeEventListener('click', userSelectScissor);
 }
