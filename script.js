@@ -22,6 +22,11 @@ const userRock = document.querySelector('.userRock')
 const userPaper = document.querySelector('.userPaper')
 const userScissor = document.querySelector('.userScissor')
 
+//new match section:
+const newMatchPrompt = document.querySelector('.question');
+const yes = document.querySelector('.yes');
+const no = document.querySelector('.no');
+
 //---------------------------------------------------------
 
 userRock.addEventListener('click', userSelectRock);
@@ -172,4 +177,11 @@ function endGame() {
     userRock.removeEventListener('click', userSelectRock);
     userPaper.removeEventListener('click', userSelectPaper);
     userScissor.removeEventListener('click', userSelectScissor);
+
+    newMatchPrompt.textContent = 'Want to start another match?';
+    newMatchPrompt.classList.add('question-style');
+    yes.textContent = 'Yes';
+    yes.classList.add('yes-style');
+    no.textContent = 'No';
+    no.classList.add('no-style');
 }

@@ -128,3 +128,46 @@ body {
   padding: 3px;
   transition: ease-out 0.4s;
 }
+
+/* =============================================== */
+/* ===========NEX MATCH PROMPT SECTION =========== */
+/* ===============================================*/
+
+.question-style {
+  background-color: white;
+  padding: 4px;
+  border: black solid 3px;
+  box-shadow: black 3px 3px;
+  transition: ease-out 0.3s;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.yes-style,
+.no-style {
+  padding: 4px 20px;
+  border: black solid 3px;
+  box-shadow: black 3px 3px;
+  transition: ease-out 0.3s;
+}
+.yes-style {
+  background-color: #00ffaa;
+}
+
+.no-style {
+  background-color: #ff6347;
+}
+
+.yes-style:hover {
+  background-color: #a3ffe0;
+  cursor: pointer;
+}
+
+.no-style:hover {
+  background-color: #ffb8ac;
+  cursor: pointer;
+}
