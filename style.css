@@ -13,6 +13,23 @@ body {
 }
 
 /* =============================================== */
+/* ================SCORE SECTION ================== */
+/* ===============================================*/
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-score,
+.computer-score {
+  border: black solid 3px;
+  padding: 3px 5px;
+  box-shadow: black 3px 3px;
+}
+
+/* =============================================== */
 /* ================TAGS SECTION ================== */
 /* ===============================================*/
 
@@ -81,6 +98,7 @@ body {
   border: black solid 3px;
   padding: 3px;
   box-shadow: black 3px 3px;
+  transition: ease-out 0.2s;
 }
 
 .win {

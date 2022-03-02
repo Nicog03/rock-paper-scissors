@@ -5,6 +5,13 @@ const body = document.querySelector('body');
 
 let roundStatus = document.querySelector('.round-status');
 
+//scores:
+const userScorePara = document.querySelector('.user-score');
+const computerScorePara = document.querySelector('.computer-score');
+
+let userScore = 0;
+let computerScore = 0;
+
 //computer buttons:
 let compRock = document.querySelector('.computerRock');
 let compPaper = document.querySelector('.computerPaper');
@@ -91,9 +98,15 @@ function gameRound() {
             } else if (computerPlay == 'paper') {
                 roundStatus.textContent = "You lost! Paper wraps rock.";
                 roundStatus.classList.add('loss');
+
+                computerScore += 1;
+                computerScorePara.textContent = computerScore;
             } else if (computerPlay == 'scissor') {
                 roundStatus.textContent = "You won! Rock breaks scissor.";
                 roundStatus.classList.add('win');
+
+                userScore += 1;
+                userScorePara.textContent = userScore;
             }
             break;
         
@@ -101,12 +114,18 @@ function gameRound() {
             if (computerPlay == 'rock') {
                 roundStatus.textContent = "You won! Paper wraps rock.";
                 roundStatus.classList.add('win');
+
+                userScore += 1;
+                userScorePara.textContent = userScore;
             } else if (computerPlay == 'paper') {
                 roundStatus.textContent = "It's a draw!";
                 roundStatus.classList.add('draw');
             } else if (computerPlay == 'scissor') {
                 roundStatus.textContent = "You lost! Scissor cuts paper.";
                 roundStatus.classList.add('loss');
+
+                computerScore += 1;
+                computerScorePara.textContent = computerScore;
             }
             break;
         
@@ -114,9 +133,15 @@ function gameRound() {
             if (computerPlay == 'rock') {
                 roundStatus.textContent = "You lost! Rock breaks scissor.";
                 roundStatus.classList.add('loss');
+
+                computerScore += 1;
+                computerScorePara.textContent = computerScore;
             } else if (computerPlay == 'paper') {
                 roundStatus.textContent = "You won! Scissor cuts paper.";
                 roundStatus.classList.add('win');
+
+                userScore += 1;
+                userScorePara.textContent = userScore;
             } else if (computerPlay == 'scissor') {
                 roundStatus.textContent = "It's a draw!";
                 roundStatus.classList.add('draw');
