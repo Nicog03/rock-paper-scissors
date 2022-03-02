@@ -7,6 +7,7 @@ let roundStatus = document.querySelector('.round-status');
 
 //scores:
 const userScorePara = document.querySelector('.user-score');
+const divider = document.querySelector('.x')
 const computerScorePara = document.querySelector('.computer-score');
 
 let userScore = 0;
@@ -21,6 +22,9 @@ let compScissor = document.querySelector('.computerScissor');
 const userRock = document.querySelector('.userRock')
 const userPaper = document.querySelector('.userPaper')
 const userScissor = document.querySelector('.userScissor')
+
+//winner:
+const winner = document.querySelector('.winner'); 
 
 //new match section:
 const newMatchPrompt = document.querySelector('.question');
@@ -155,7 +159,6 @@ function gameRound() {
             break;
     }
     if (userScore == 5) {
-        const winner = document.querySelector('.winner');
         winner.classList.add('winner-style');
         winner.textContent = 'You won the match!'
 
@@ -163,7 +166,7 @@ function gameRound() {
 
         endGame();
     } else if (computerScore == 5) {
-        const winner = document.querySelector('.winner');
+        
         winner.classList.add('winner-style');
         winner.textContent = 'The computer won the match!'
 
@@ -184,4 +187,60 @@ function endGame() {
     yes.classList.add('yes-style');
     no.textContent = 'No';
     no.classList.add('no-style');
+
+    yes.addEventListener('click', restart);
+    no.addEventListener('click', end);
+}
+
+function restart() {
+    body.style.background = 'white'
+
+    userScore = 0;
+    computerScore = 0;
+
+    userScorePara.textContent = userScore;
+    computerScorePara.textContent = computerScore;
+
+    roundStatus.textContent = '';
+    roundStatus.classList.remove('win');
+    roundStatus.classList.remove('loss');
+    roundStatus.classList.remove('draw')
+
+    winner.classList.remove('winner-style');
+    winner.textContent = '';
+
+    newMatchPrompt.textContent = '';
+    newMatchPrompt.classList.remove('question-style');
+    yes.textContent = '';
+    yes.classList.remove('yes-style');
+    no.textContent = '';
+    no.classList.remove('no-style');
+
+    userRock.addEventListener('click', userSelectRock);
+    userPaper.addEventListener('click', userSelectPaper);
+    userScissor.addEventListener('click', userSelectScissor);
+
+}
+
+function end() {
+    body.style.background = 'white';
+
+    const scoreContainer = document.querySelector('.score');
+    scoreContainer.remove();
+
+    const buttonsContainer = document.querySelector('.buttons');
+    buttonsContainer.remove();
+
+    roundStatus.remove();
+
+    winner.remove();
+
+    const promptContainer = document.querySelector('.next-match')
+    promptContainer.remove();
+
+    const goodbye = document.createElement('p');
+    goodbye.textContent = 'Thank you for playing!';
+    body.appendChild(goodbye);
+
+
 }
